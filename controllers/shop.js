@@ -10,7 +10,7 @@ exports.getProducts = (req, res, next) => {
             })
         })
         .catch(err => {
-            console.log('ERR : ', err);
+            console.log('ERR : ', err)
         })
 }
 
@@ -24,14 +24,14 @@ exports.getProduct = (req, res, next) => {
                 path: '/products'
             })
         })
-    // Product.findByPk(prodId)
-    //   .then(product => {
-    //     res.render('shop/product-detail', {
-    //       product: product,
-    //       pageTitle: product.title,
-    //       path: '/products'
-    //     });
-    //   })
+        // Product.findByPk(prodId)
+        //   .then(product => {
+        //     res.render('shop/product-detail', {
+        //       product: product,
+        //       pageTitle: product.title,
+        //       path: '/products'
+        //     });
+        //   })
         .catch(err => {
             console.log(err)
         })
