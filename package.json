@@ -5,14 +5,8 @@
   "main": "app.js",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run lint"
     }
-  },
-  "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "git add"
-    ]
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
