@@ -6,11 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "start-server": "node app.js"
+    "start-server": "node app.js",
+    "lint": "eslint ./",
+    "lint-fix": "eslint . --fix"
   },
   "author": "Maximilian Schwarzmüller",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "nodemon": "^1.18.3"
   },
   "dependencies": {
