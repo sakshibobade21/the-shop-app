@@ -1,0 +1,8 @@
+{
+  "spec_dir": "spec",
+  "spec_files": [
+    "extend-spec.js",
+    "merge-spec.js",
+    "blend-spec.js"
+  ]
+}

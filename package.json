@@ -11,18 +11,7 @@
   "author": "Maximilian Schwarzmüller",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.2.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-node": "^4.1.0",
-    "eslint-config-prettier": "^7.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.0.0",
-    "nodemon": "^1.18.3",
-    "prettier": "^2.2.1"
+    "nodemon": "^1.18.3"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -30,6 +19,8 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^2.2.5",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "sequelize": "^6.3.5",
+    "sql-dialect": "^5.0.1"
   }
 }
