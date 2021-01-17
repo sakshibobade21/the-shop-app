@@ -1,10 +1,26 @@
-// This gives us the database connection pool managed by the sequelize
+const mongo = require('mongodb')
+const MongoClient = mongo.MongoClient
 
-const Sequelize = require('sequelize')
+let _db
 
-const sequelize = new Sequelize('node-complete', 'root', 'password', {
-    dialect: 'mysql',
-    host: 'localhost'
-})
+const mongoConnect = (callback) => {
+    MongoClient.connect('mongodb+srv://Sakshi:sakshi123@cluster0.vpzlm.mongodb.net/shop?retryWrites=true&w=majority')
+        .then(client => {
+            _db = client.db()
+            callback()
+        })
+        .catch(err => {
+            throw err
+        })
+}
 
-module.exports = sequelize
+const getDb = () => {
+    if (_db) {
+        return _db
+    }
+    // throw 'No Database Found!'
+    throw new Error()
+}
+
+exports.mongoConnect = mongoConnect
+exports.getDb = getDb

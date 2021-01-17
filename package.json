@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "start-server": "node app.js",
     "lint": "eslint ./",
     "lint-fix": "eslint . --fix"
   },
@@ -31,6 +30,7 @@
     "ejs": "^2.7.4",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "mongodb": "^3.6.3",
     "mysql2": "^2.2.5",
     "pug": "^2.0.3",
     "sequelize": "^6.3.5",
