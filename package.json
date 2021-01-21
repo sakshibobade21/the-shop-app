@@ -26,8 +26,10 @@
     "pre-commit": "^1.2.2"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "connect-mongodb-session": "^2.4.1",
+    "csurf": "^1.11.0",
     "ejs": "^2.7.4",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
