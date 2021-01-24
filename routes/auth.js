@@ -12,9 +12,11 @@ router.post('/login',
   [
     check('email')
       .isEmail()
-      .withMessage('Entered email id is invalid'),
+      .withMessage('Entered email id is invalid')
+      .normalizeEmail(),
     body('password', 'Enter the valid password')
       .isLength({ min: 4 })
+      .trim()
   ],
   authController.postLogin)
 router.post('/signup',
@@ -29,9 +31,11 @@ router.post('/signup',
               return Promise.reject(new Error('This email exists already. Please pick a different one'))
             }
           })
-      }),
+      })
+      .normalizeEmail(),
     body('password', 'Password must be atleast 4 characters long')
-      .isLength({ min: 4 }),
+      .isLength({ min: 4 })
+      .trim(),
     body('confirmPassword')
       .custom((value, { req }) => {
         if (value !== req.body.password) {
@@ -39,6 +43,7 @@ router.post('/signup',
         }
         return true
       })
+      .trim()
   ],
   authController.postSignup)
 // router.post('/signup', validateMiddleware.validateSignUp, authController.postSignup)
