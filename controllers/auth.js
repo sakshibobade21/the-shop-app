@@ -76,7 +76,11 @@ exports.postLogin = (req, res, next) => {
         })
         .catch(err => console.log(err))
     })
-    .catch()
+    .catch((err) => {
+      const error = new Error(err)
+      error.httpStatusCode = 500
+      return next(error)
+    })
 }
 exports.getSignup = (req, res, next) => {
   let message = req.flash('error')
@@ -129,7 +133,11 @@ exports.postSignup = (req, res, next) => {
         html: '<h3>You Successfully Signed Up</h3>'
       })
     })
-    .catch()
+    .catch((err) => {
+      const error = new Error(err)
+      error.httpStatusCode = 500
+      return next(error)
+    })
 }
 
 exports.postLogout = (req, res, next) => {
@@ -178,7 +186,11 @@ exports.postReset = (req, res, next) => {
           `
         })
       })
-      .catch()
+      .catch((err) => {
+        const error = new Error(err)
+        error.httpStatusCode = 500
+        return next(error)
+      })
   })
 }
 exports.getNewPassword = (req, res, next) => {
@@ -202,7 +214,11 @@ exports.getNewPassword = (req, res, next) => {
         passwordToken: token
       })
     })
-    .catch()
+    .catch((err) => {
+      const error = new Error(err)
+      error.httpStatusCode = 500
+      return next(error)
+    })
 }
 exports.postNewPassword = (req, res, next) => {
   const newPassword = req.body.password
@@ -228,5 +244,9 @@ exports.postNewPassword = (req, res, next) => {
     .then(result => {
       res.redirect('/login')
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      const error = new Error(err)
+      error.httpStatusCode = 500
+      return next(error)
+    })
 }
